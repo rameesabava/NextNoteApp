@@ -1,8 +1,15 @@
+"use client"
+import { useSession } from "next-auth/react";
+import { redirect } from "next/navigation";
 import { FaClock, FaEdit, FaStickyNote, FaUser } from "react-icons/fa";
 import { IoIosPower } from "react-icons/io";
 import { MdDelete } from "react-icons/md";
 
 export default function Dashboard() {
+    const {data:session} = useSession()
+    if(!session){
+        redirect('/login')
+    }
     return (
         <div className="flex flex-col justify-center items-center my-5">
             <div className="flex justify-between items-center text-blue-400 w-200">
@@ -11,8 +18,8 @@ export default function Dashboard() {
                     <h1>Miniso</h1>
                 </div>
                 <div className="flex items-center gap-2">
-                    <FaUser />username
-                    <IoIosPower className="ms-3" />
+                    <FaUser />{session?.user?.name}
+                    <IoIosPower className="ms-3"/>
                 </div>
             </div>
             <div className="bg-gray-300 p-3 my-5 w-200 rounded">
