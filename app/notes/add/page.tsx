@@ -23,10 +23,10 @@ export default function AddNote() {
                     <button className="rounded-full w-6 h-6 bg-blue-300"></button>
 
                 </div>
-<div className="my-5">
+                <div className="my-5">
                     <input type="text" placeholder="Title" className="w-full p-2 mb-2" />
                     <input type="text" placeholder="Description" className="w-full p-2" />
-</div>            </div>
+                </div>            </div>
         </div>
     )
 }
