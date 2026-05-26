@@ -1,7 +1,17 @@
+"use client"
 import { FaX } from "react-icons/fa6";
 import { TiTick } from "react-icons/ti";
+import { useSession } from "next-auth/react";
+import { redirect } from "next/navigation";
 
 export default function UpdateNote() {
+    const {status} = useSession()
+    if(status=="loading"){
+        return <p className="text-center mt-10 text-2xl">Loading....</p>
+    }
+    if(status=="unauthenticated"){
+        redirect('/login')
+    }
     return (
         <div className="flex justify-center items-center min-h-screen">
             <div className="border-gray-100 shadow rounded p-5 w-100">
@@ -26,7 +36,8 @@ export default function UpdateNote() {
                 <div className="my-5">
                     <input type="text" placeholder="Title" className="w-full p-2 mb-2" />
                     <input type="text" placeholder="Description" className="w-full p-2" />
-                </div>            </div>
+                </div>
+            </div>
         </div>
     )
 }

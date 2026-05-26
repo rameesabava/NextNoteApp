@@ -43,7 +43,7 @@ export default function Register() {
                 <form onSubmit={handleRegister}>
                     <input onChange={e=>setUserDetails({...userDetails,name:e.target.value})} type="text" placeholder="Name" className="p-2 bg-white rounded text-gray-500 w-full mb-2" />
                     <input onChange={e=>setUserDetails({...userDetails,email:e.target.value})}  type="text" placeholder="Email" className="p-2 bg-white rounded text-gray-500 w-full mb-2" />
-                    <input onChange={e=>setUserDetails({...userDetails,password:e.target.value})}  type="text" placeholder="Password" className="p-2 bg-white rounded text-gray-500 w-full mb-2" />
+                    <input onChange={e=>setUserDetails({...userDetails,password:e.target.value})}  type="password" placeholder="Password" className="p-2 bg-white rounded text-gray-500 w-full mb-2" />
                 
                 <div className="flex justify-between items-center">
                     <button type="submit" className="bg-blue-700 text-white rounded p-2">Register</button>

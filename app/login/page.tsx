@@ -37,7 +37,7 @@ export default function Login() {
                 <h3 className="mb-3">Note Taking made easier!</h3>
                 <form onSubmit={handleLogin}>
                     <input value={userDetails.email} onChange={e => setUserDetails({ ...userDetails, email: e.target.value })} type="text" placeholder="Email" className="p-2 bg-white rounded text-gray-500 w-full mb-2" />
-                    <input value={userDetails.password} onChange={e => setUserDetails({ ...userDetails, password: e.target.value })} type="text" placeholder="Password" className="p-2 bg-white rounded text-gray-500 w-full mb-2" />
+                    <input value={userDetails.password} onChange={e => setUserDetails({ ...userDetails, password: e.target.value })} type="password" placeholder="Password" className="p-2 bg-white rounded text-gray-500 w-full mb-2" />
                     <div className="flex justify-between items-center">
                         <button type="submit" className="bg-blue-700 text-white rounded p-2">Login</button>
                         <p>Already a User? Click here to <Link href={'/register'} className="text-blue-700">Register</Link></p>
